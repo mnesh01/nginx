@@ -5,8 +5,11 @@ An Nginx reverse proxy to load balance multiple Node.js instances running in Doc
 ## Technologies used 
 
 Nginx (Reverse Proxy & Load Balancing)
+
 Node.js (Backend Servers)
+
 Docker & Docker Compose (Containerization)
+
 JavaScript
 
 ## Setup & Installation
@@ -14,19 +17,14 @@ JavaScript
 1. Clone the Repository
    
 git clone https://github.com/mnesh01/nginx.git
+
 cd nginx
 
-3. Build and Run with Docker
+2. Build and Run with Docker
    
 docker-compose up --build
-This will:
-✅ Start three Node.js instances (on ports 3001, 3002, 3003).
 
-✅ Start Nginx as a reverse proxy (listening on port 8080).
-
-✅ Load balance traffic among the running Node.js instances.
-
-5. Access the Application
+3. Access the Application
 
 Once the containers are up, visit:
  http://localhost:80
@@ -34,6 +32,7 @@ Once the containers are up, visit:
 ## Configuration details
 
 Nginx Configuration (nginx.conf):
+
 Uses least_conn strategy to distribute traffic.
 
 Forwards requests to Node.js servers running on 127.0.0.1:3001, 127.0.0.1:3002, 127.0.0.1:3003.
